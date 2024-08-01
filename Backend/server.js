@@ -38,9 +38,9 @@ app.use('/api/order', orderRouter)
 //deploy
 if(process.env.NODE_ENV === "production"){
     const dirPath = path.resolve();
-    app.use(express.static("FrontEnd/dist"));
+    app.use(express.static("./FrontEnd/dist"));
     app.get("*",(req,res)=>{
-        res.sendFile(path.resolve(dirPath,".FrontEnd/dist","index.html"));
+        res.sendFile(path.resolve(dirPath,"./FrontEnd/dist","index.html"));
     })
 }
 
